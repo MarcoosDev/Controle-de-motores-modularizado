@@ -1,6 +1,6 @@
 #include <Arduino.h>
-#include <controle.h>
 #include <sensores.h>
+#include <motor.h>
 
 Motor motorE(8,9,10);
 Motor motorD(5,6,7);
