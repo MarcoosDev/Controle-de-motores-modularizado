@@ -6,7 +6,6 @@ Motor motorD(5,6,7);
 
 ControleMotor mover(motorE,motorD);
 
-
 int contador = 0;
 
 void setup() {

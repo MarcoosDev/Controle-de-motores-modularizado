@@ -8,6 +8,7 @@ struct Motor {
     int pin2;
     int pwm;
 
+    
     Motor(int p1, int p2, int p3)
         : pin1(p1), pin2(p2), pwm(p3)
     {
