@@ -8,16 +8,14 @@ Ele foi desenvolvido inicialmente para um ESP32-C3 Mini, mas a lógica pode ser 
 Criar um facilitador para:
 - controlar motores esquerdo e direito;
 - mover o carrinho para frente, trás, esquerda e direita;
-- ler sensores com facilidade;
-- organizar o código de forma limpa e reutilizável.
+- estruturar o código de controle de motores de forma limpa e reutilizável.
 
 ## Características
 
 - Controle de dois motores independentes;
 - Abstração para comandos de movimento básicos;
-- Leitura de sensores analógicos;
 - Estrutura organizada em arquivos `.h` e `main.cpp`;
-- Compatível com PlatformIO, que é a recomendação para este projeto.
+- Compatível com PlatformIO.
 
 ## Requisitos
 
@@ -26,16 +24,13 @@ Criar um facilitador para:
 - Placa compatível com Arduino/ESP32 (exemplo: ESP32-C3)
 - Ponte H para controle dos motores
 - Dois motores DC
-- Sensores de linha ou reflectância, se quiser usar a leitura de sensores
 
 ## Estrutura do projeto
 
 ```text
 Carrinho pro max/
 ├── include/
-│   ├── controle.h
-│   ├── motor.h
-│   └── sensores.h
+│   └── motor.h
 ├── src/
 │   └── main.cpp
 ├── platformio.ini
@@ -56,13 +51,6 @@ No exemplo atual, o projeto está configurado para usar:
   - pino 6
   - pino 7 (PWM)
 
-- Sensores:
-  - esquerdo: pino 4
-  - meio: pino 3
-  - direito: pino 2
-
-- Limite de leitura do sensor: `800`
-
 Esses valores podem ser alterados conforme a sua montagem e o hardware utilizado.
 
 ## Como usar
@@ -72,7 +60,7 @@ Esses valores podem ser alterados conforme a sua montagem e o hardware utilizado
 3. Abra a pasta do projeto no VS Code.
 4. Ajuste o arquivo `platformio.ini` conforme a placa e a porta serial.
 5. Compile e faça o upload para o microcontrolador.
-6. Ajuste os pinos e os limites de sensor no código, se necessário.
+6. Ajuste os pinos no código, se necessário.
 
 ## Exemplo de uso
 
@@ -109,12 +97,8 @@ A classe `Motor` controla um motor individual usando:
 ### ControleMotor
 A classe `ControleMotor` junta os dois motores e fornece comandos de alto nível para movimentar o carrinho.
 
-### Sensor
-A classe `Sensor` lê os sensores analógicos e converte a leitura em valores lógicos baseados em um limite.
-
 ## Observações importantes
 
-- O valor de `800` como limite pode precisar de ajuste conforme o sensor e a iluminação ambiente.
 - Verifique a polaridade dos motores e da ponte H.
 - Use uma fonte de alimentação adequada para os motores.
 - No Windows, a porta serial do PlatformIO pode precisar ser alterada no `platformio.ini`.
@@ -123,9 +107,8 @@ A classe `Sensor` lê os sensores analógicos e converte a leitura em valores l�
 
 - O uso do PlatformIO é altamente recomendado, pois facilita a organização do projeto, compilação, upload e monitoramento serial.
 - O projeto está estruturado de forma modular, o que facilita futuras expansões, como:
-  - seguir linha;
   - controle PID;
-  - calibração automática de sensores;
+  - rotinas de segurança de motores;
   - máquina de estados para navegação.
 
 ## Considerações finais
