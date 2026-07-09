@@ -3,7 +3,7 @@
 Este projeto é uma base simples e modular para controlar o movimento de carrinhos que usam ponte H com microcontroladores compatíveis com C++/Arduino.  
 Ele foi desenvolvido inicialmente para um ESP32-C3 Mini, mas a lógica pode ser adaptada para outros microcontroladores, desde que os pinos e a configuração do ambiente sejam ajustados.
 
-## Objetivo
+## Objetivo 
 
 Criar um facilitador para:
 - controlar motores esquerdo e direito;
