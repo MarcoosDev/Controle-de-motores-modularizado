@@ -20,4 +20,5 @@ void setup() {
 void loop() {
   mover.frente(2000);
   mover.direita(500);
+  mover.parar(1000);
 }

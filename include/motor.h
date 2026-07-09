@@ -32,7 +32,7 @@ struct Motor {
         analogWrite(pwm, velocidade);
     }
 
-    void parar() {
+    void parar(uint8_t velocidade = 0) {
         analogWrite(pwm, 0);
     }
 };

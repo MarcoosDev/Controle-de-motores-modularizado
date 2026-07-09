@@ -41,6 +41,12 @@ struct ControleMotor {
         ladoD.tras(255);
         if (time_delay > 0) delay(time_delay);
     }
+    
+    void parar(int time_delay = 0){
+        ladoE.parar();
+        ladoD.parar();
+        if (time_delay > 0) delay(time_delay);
+    }
 };
 
 #endif
